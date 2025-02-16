@@ -43,5 +43,22 @@ This is read me file for inside what ever i am doing
         - Commitlint config (any how this how to change with module.exports)    
             echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
 
-        How commit message need to be:
-            Feat: Eslint,Prettier,husky configured
+    3. How to config commitizen:
+        - yarn -D commitizen cz-conventional-changelog
+        - In package.json
+            "config": {
+                    "commitizen": {
+                    "path": "cz-conventional-changelog"
+                    }
+                },
+                
+            "husky": {
+                "hooks": {
+                "pre-commit": "lint-staged",
+                "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+                }
+            },
+
+            "commit": "cz"
+
+        
