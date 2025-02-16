@@ -4,3 +4,4 @@
 yarn && npx pod-install
 
 # merge and pod-install trigger
+# chmod +x .husky/post-merge

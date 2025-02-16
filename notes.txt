@@ -1,0 +1,47 @@
+This is read me file for inside what ever i am doing
+
+    1. How to add paths like @shared? 
+        - first you need to have babel-plugin-module-resolver
+        - inside tsconfig.json inside compiler options add baseurl and paths.
+        - then from react native site add required to things to work in babel.config.js
+    
+    2. How to add eslint,prettier,husky,commitlint ?
+        - follow below install
+            - yarn add -D eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-native eslint-plugin-prettier eslint-config-prettier eslint-plugin-unused-imports @typescript-eslint/parser @typescript-eslint/eslint-plugin
+            - yarn add -D prettier eslint-plugin-react eslint-plugin-prettier eslint-config-prettier eslint-plugin-import @typescript-eslint/eslint-plugin @typescript-eslint/parser
+            - yarn add -D @react-native-community/eslint-config
+            - yarn add -D eslint-plugin-jest
+        - install husky 
+            - yarn add -D husky lint-staged
+            - precommit,post-merge,commit-msg ( This you have to manually bcz yarn husky add is depricated)
+                - pre-commit
+                    #!/usr/bin/env sh
+                    . "$(dirname "$0")/_/husky.sh"
+
+                    yarn lint-staged
+
+                    # chmod +x .husky/pre-commit // for giving permission to that file
+                - post-merge
+                    #!/usr/bin/env sh
+                    . "$(dirname "$0")/_/husky.sh"
+
+                    yarn && npx pod-install
+
+                    # merge and pod-install trigger
+                    # chmod +x .husky/post-merge
+                - commit-msg ( to trigger commitlint)
+                    #!/usr/bin/env sh
+                    . "$(dirname "$0")/_/husky.sh"
+
+                    yarn commitlint --edit $1
+
+                    # trigger commitlint execute
+                    # chmod +x .husky/commit=msg
+
+        - Install commitlint
+            yarn add -D @commitlint/cli @commitlint/config-conventional
+        - Commitlint config (any how this how to change with module.exports)    
+            echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+
+        How commit message need to be:
+            Feat: Eslint,Prettier,husky configured
