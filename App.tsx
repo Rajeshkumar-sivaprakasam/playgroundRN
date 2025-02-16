@@ -1,9 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
-import ErrorBoundary from "react-native-error-boundary";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import Router from "./src/shared/routes/Router";
-import { PaperProvider } from "react-native-paper";
+import ErrorBoundary from 'react-native-error-boundary'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import Router from './src/shared/routes/Router'
+import { PaperProvider } from 'react-native-paper'
 
 const App = () => {
   return (
@@ -18,9 +16,7 @@ const App = () => {
         </SafeAreaProvider>
       </PaperProvider>
     </ErrorBoundary>
-  );
-};
+  )
+}
 
-export default App;
-
-const styles = StyleSheet.create({});
+export default App

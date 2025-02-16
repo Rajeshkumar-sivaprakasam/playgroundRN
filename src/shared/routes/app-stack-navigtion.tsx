@@ -1,15 +1,14 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
-import { HomeScreen } from "../../screens/home";
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { HomeScreen } from '../../screens/home'
 
 const AppStackNaviagation = () => {
-  const Stack = createNativeStackNavigator<any>();
+  const Stack = createNativeStackNavigator()
 
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator initialRouteName='Home'>
+      <Stack.Screen name='Home' component={HomeScreen} />
     </Stack.Navigator>
-  );
-};
+  )
+}
 
-export default AppStackNaviagation;
+export default AppStackNaviagation

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn && npx pod-install
+
+# merge and pod-install trigger
+# chmod +x .husky/post-merge

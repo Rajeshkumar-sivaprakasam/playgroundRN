@@ -1,0 +1,33 @@
+# Ignore node_modules and build folders
+node_modules/
+dist/
+build/
+
+# React Native specific ignores
+android/
+ios/
+expo/
+
+# Config & lock files
+*.lock
+package-lock.json
+yarn.lock
+
+# Logs & environment files
+*.log
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignoring test snapshots
+__snapshots__/
+
+# Ignoring TypeScript build outputs
+*.d.ts
+tsconfig.tsbuildinfo
+
+# Ignore editor/IDE settings
+.vscode/
+.idea/
+.DS_Store

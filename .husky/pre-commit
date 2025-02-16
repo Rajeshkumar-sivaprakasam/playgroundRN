@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn lint-staged
+
+# chmod +x .husky/pre-commit // for giving permission to that file
