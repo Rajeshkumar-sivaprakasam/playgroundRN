@@ -1,5 +1,5 @@
 module.exports = {
-  presets: ["module:@react-native/babel-preset"],
+  presets: ['module:@react-native/babel-preset'],
   /*
   To get smaller bundle size by excluding modules you don't use, 
   you can use our optional babel plugin. The plugin automatically 
@@ -8,7 +8,20 @@ module.exports = {
    */
   env: {
     production: {
-      plugins: ["react-native-paper/babel"],
+      plugins: ['react-native-paper/babel'],
     },
   },
-};
+  plugins: [
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
+        alias: {
+          '@shared': './src/shared/*',
+          '@screens': './src/screens/*',
+        },
+      },
+    ],
+  ],
+}
