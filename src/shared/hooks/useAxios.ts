@@ -38,12 +38,17 @@ const useAxios = () => {
         params: method === 'GET' ? data : undefined,
         headers: { ...axiosInstance.defaults.headers, ...headers },
         timeout: timeout || axiosInstance.defaults.timeout,
+        cancelToken: axios.CancelToken.source().token,
       }
 
       const result = await axiosInstance(config)
       setResponse(result.data)
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
+      if (axios.isCancel(err)) {
+        console.log('Request cancelled', err.message) //you can add your toster here
+        return
+      }
       setError(err.response ? err.response.data : err.message)
     } finally {
       setLoading(false)
