@@ -1,16 +1,16 @@
 module.exports = {
-  presets: ["module:@react-native/babel-preset"],
+  presets: ['module:@react-native/babel-preset'],
   plugins: [
     [
-      "module-resolver",
+      'module-resolver',
       {
-        root: ["./src"],
-        extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
+        root: ['./src'],
+        extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
         alias: {
-          "@shared": "./src/shared/*",
-          "@screens": "./src/screens/*",
+          '@shared': './src/shared/*',
+          '@screens': './src/screens/*',
         },
       },
     ],
   ],
-};
+}
